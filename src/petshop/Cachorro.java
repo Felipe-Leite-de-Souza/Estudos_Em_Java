@@ -5,4 +5,5 @@ public class Cachorro {
 	String raca;
 	char sexo;
 	int idade;
+	
 }
