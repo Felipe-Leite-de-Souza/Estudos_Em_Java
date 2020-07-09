@@ -1,5 +1,10 @@
 package exemplosBasicos;
 
+/*
+ * Construir um programa que receba 3 preços (5,8,12) e que imprima para o usuário os valores de cada um deles e sua média.
+ */
+
+
 public class ExemploCalculoDeMedia {
 
 	public static void main(String[] args) {
