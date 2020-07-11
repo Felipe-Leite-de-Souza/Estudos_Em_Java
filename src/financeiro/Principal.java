@@ -4,30 +4,43 @@ public class Principal {
 
 	public static void main(String[] args) {
 		Fornecedor imobiliaria = new Fornecedor();
-		imobiliaria.setNome("Casa & Cia Negócios Imobiliários");
+		imobiliaria.setNome("Inova Imóveis - Negócios Imobiliários");
 
 		Fornecedor mercado = new Fornecedor();
-		mercado.setNome("Mercado do João");
+		mercado.setNome("Mercado do Candinho");
 		
-		ContaPagar conta1 = new ContaPagar();
-		conta1.setDescricao("Aluguel de matriz");
-		conta1.setValor(1230d);
-		conta1.setDataVencimento("20/07/2020");
-		conta1.setFornecedor(imobiliaria);
+		Cliente atacadista = new Cliente();
+		atacadista.setNome("Atacadista Três Irmãos");
+		Cliente telefonia = new Cliente();
+		telefonia.setNome("Master Communication");
 		
-		ContaPagar conta2 = new ContaPagar(mercado, "Compras do mês", 390d, "19/06/2020");
+		ContaPagar contaPagar1 = new ContaPagar();
+		contaPagar1.setDescricao("Aluguel de matriz");
+		contaPagar1.setValor(1230d);
+		contaPagar1.setDataVencimento("20/07/2020");
+		contaPagar1.setFornecedor(imobiliaria);
 		
-		ContaPagar conta3 = new ContaPagar(mercado, "Aluguel filial", 390d, "11/07/2020");
+		ContaPagar contaPagar2 = new ContaPagar(mercado, "Compras do mês", 785d, "19/06/2020");
 		
-		conta1.pagar();
+		ContaReceber contaReceber1 = new ContaReceber();
+		contaReceber1.setDescricao("Desenvolvimento de software de logística");
+		contaReceber1.setValor(100000d);
+		contaReceber1.setDataVencimento("17/06/2020");
+		contaReceber1.setCliente(atacadista);
 		
-		conta2.cancelar();
-		conta2.pagar();
-		conta2.cancelar();
+		ContaReceber contaReceber2 = new ContaReceber(telefonia, "Manutenção do sistema de pagamentos", 80000d, "22/06/2020");
+				
+		contaPagar1.pagar();
+		System.out.println("------------------------------------");
 		
-		conta3.pagar();
-		conta3.pagar();
-		conta2.cancelar();
+		contaPagar2.cancelar();
+		System.out.println("------------------------------------");
+		
+		
+		contaReceber1.receber();
+		System.out.println("------------------------------------");
+		
+		contaReceber2.cancelar();
 		
 	}
 
