@@ -40,6 +40,17 @@ public class ContaReceber extends Conta {
 		}
 	}
 
+	public void exibirDetalhes() {
+		System.out.println("\nContas a Receber");
+		System.out.println("--------------------------------------------------");
+		System.out.println("Cliente: " + this.getCliente().getNome());
+		System.out.println("Descrição: " + this.getDescricao());
+		System.out.println("Valor: " + this.getValor());
+		System.out.println("Data de Vencimento: " + this.getDataVencimento());
+		System.out.println("Situação: " + this.getSituacaoConta());
+		System.out.println("--------------------------------------------------");
+	}
+	
 	public Cliente getCliente() {
 		return cliente;
 	}

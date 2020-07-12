@@ -29,19 +29,11 @@ public class Principal {
 		contaReceber1.setCliente(atacadista);
 		
 		ContaReceber contaReceber2 = new ContaReceber(telefonia, "Manutenção do sistema de pagamentos", 80000d, "22/06/2020");
-				
-		contaPagar1.pagar();
-		System.out.println("------------------------------------");
 		
-		contaPagar2.cancelar();
-		System.out.println("------------------------------------");
+		RelatorioContas relatorioContas = new RelatorioContas();
+		Conta[] contas = new Conta[] {contaPagar1, contaPagar2, contaReceber1, contaReceber2};
 		
-		
-		contaReceber1.receber();
-		System.out.println("------------------------------------");
-		
-		contaReceber2.cancelar();
-		
+		relatorioContas.exibirListaDeContas(contas);
 	}
 
 }

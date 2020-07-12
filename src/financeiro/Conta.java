@@ -1,6 +1,6 @@
 package financeiro;
 
-public class Conta {
+public abstract class Conta {
 	private String descricao;
 	private double valor;
 	private String dataVencimento;
@@ -35,6 +35,8 @@ public class Conta {
 			
 		}
 	}
+	
+	public abstract void exibirDetalhes();
 	
 	public String getDescricao() {
 		return descricao;
