@@ -14,23 +14,18 @@ public class ContaPagar extends Conta {
 		this.setDataVencimento(dataVencimento);
 	}
 
-	public void pagar() {
+	public void pagar() throws OperacaoContaException {
 
-		if(SituacaoConta.PAGA.equals(getSituacaoConta())) {
-			System.err.println("\nPagamento de conta já efetuado! ");
-			System.out.println("\nDados da conta já paga: ");
-			exibirInformacoesDeConta();
-		} else if (SituacaoConta.CANCELADA.equals(getSituacaoConta())) {
-			System.err.println("Está conta foi cancelada! ");
-			System.out.println("Dados da conta cancelada: ");
-			exibirInformacoesDeConta();
-			this.situacaoConta = SituacaoConta.CANCELADA;
+		if(SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
+			throw new OperacaoContaException("\\nPagamento de conta já efetuado!" + getDescricao());
+		} else if (SituacaoConta.CANCELADA.equals(this.getSituacaoConta())) {
+			throw new OperacaoContaException("Está conta foi cancelada!" + getDescricao());
 		} else {
 			System.out.println("Conta ainda pendente!\n");
 			System.out.println("~~~~~~~~ Informações para o pagamento ~~~~~~~~\n");
-			exibirInformacoesDeConta();
 			this.situacaoConta = SituacaoConta.PAGA;
 		}
+		exibirInformacoesDeConta();
 	}
 	
 	public void exibirDetalhes() {

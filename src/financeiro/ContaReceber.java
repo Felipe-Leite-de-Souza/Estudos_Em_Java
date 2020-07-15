@@ -14,11 +14,11 @@ public class ContaReceber extends Conta {
 	}
 	
 	public void receber() {
-		if(SituacaoConta.PAGA.equals(getSituacaoConta())) {
+		if(SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
 			System.out.println("Não se pode cancelar uma conta que já foi paga!\n");
 			System.out.println("Dados da conta já paga: ");
 			exibirInformacoesDeConta();
-		} else if(SituacaoConta.CANCELADA.equals(getSituacaoConta())) {
+		} else if(SituacaoConta.CANCELADA.equals(this.getSituacaoConta())) {
 			System.out.println("Não se pode cancelar uma conta que já foi cancelada!\n");
 			System.out.println("Dados da conta cancelada: ");
 			exibirInformacoesDeConta();
@@ -30,14 +30,13 @@ public class ContaReceber extends Conta {
 		}
 	}
 	
-	public void cancelar() {
+	public void cancelar() throws OperacaoContaException {
 		if(this.getValor() > 50000) {
-			System.out.println("Conta  a receber acima de 50 mil reais não pode ser cancelada.\n");
-			System.out.println("Dados da conta: ");
-			exibirInformacoesDeConta();
+			throw new OperacaoContaException("Conta a receber acima de 50 mil reais não pode ser cancelada.\n" + getDescricao());
 		} else {
 			super.cancelar();
 		}
+		exibirInformacoesDeConta();
 	}
 
 	public void exibirDetalhes() {

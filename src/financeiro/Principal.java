@@ -30,10 +30,24 @@ public class Principal {
 		
 		ContaReceber contaReceber2 = new ContaReceber(telefonia, "Manutenção do sistema de pagamentos", 80000d, "22/06/2020");
 		
+		try {
+			contaPagar1.pagar();
+			contaPagar2.cancelar();
+			contaReceber1.receber();
+			contaReceber2.cancelar();
+		} catch(OperacaoContaException e) {
+			System.out.println("Erro na operação: " + e.getMessage());
+		}
+		
+		
+		/*
+		 * Exibição de relatório
+		 * 
 		RelatorioContas relatorioContas = new RelatorioContas();
 		Conta[] contas = new Conta[] {contaPagar1, contaPagar2, contaReceber1, contaReceber2};
 		
 		relatorioContas.exibirListaDeContas(contas);
+		*/
 	}
 
 }

@@ -12,28 +12,23 @@ public abstract class Conta {
 	}
 	
 	public void exibirInformacoesDeConta() {
+		System.out.println("Dados da conta: ");
 		System.out.println("Descrição: " + descricao);
 		System.out.println("Valor: " + valor);
 		System.out.println("Data do vencimento: " + dataVencimento + "\n");
 		this.situacaoConta = SituacaoConta.PAGA;
 	}
 	
-	public void cancelar() {
-		if(SituacaoConta.PAGA.equals(getSituacaoConta())) {
-			System.out.println("Não se pode cancelar uma conta que já foi paga!\n");
-			System.out.println("Dados da conta já paga: ");
-			exibirInformacoesDeConta();
-		} else if(SituacaoConta.CANCELADA.equals(getSituacaoConta())) {
-			System.out.println("Não se pode cancelar uma conta que já foi cancelada!\n");
-			System.out.println("Dados da conta cancelada:");
-			exibirInformacoesDeConta();
+	public void cancelar() throws OperacaoContaException {
+		if(SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
+			throw new OperacaoContaException("Não se pode cancelar uma conta que já foi paga!\n" + getDescricao());
+		} else if(SituacaoConta.CANCELADA.equals(this.getSituacaoConta())) {
+			throw new OperacaoContaException("Não se pode cancelar uma conta que já foi cancelada!\n" + getDescricao());
 		} else {
-			System.out.println("Conta cancelada!\n");
+			System.out.println("Conta cancelada!\n" + getDescricao());
 			this.situacaoConta = SituacaoConta.CANCELADA;
-			System.out.println("Dados da conta cancelada: ");
-			exibirInformacoesDeConta();
-			
 		}
+		exibirInformacoesDeConta();
 	}
 	
 	public abstract void exibirDetalhes();
