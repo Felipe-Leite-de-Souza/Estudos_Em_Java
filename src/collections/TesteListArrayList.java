@@ -14,6 +14,8 @@ public class TesteListArrayList {
 		
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
+		//Imprimi sempre na ordem que for adicionado
+		//Permite "duplicação"
 		alunos.add(aluno1);
 		alunos.add(aluno2);
 		alunos.add(aluno3);
