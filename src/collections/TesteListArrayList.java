@@ -19,6 +19,8 @@ public class TesteListArrayList {
 		alunos.add(aluno3);
 		alunos.add(aluno4);
 		
+		imprimirAlunos(alunos);
+		
 	}
 	
 	//Declarado com STATIC pois será chamado dentro do método main
