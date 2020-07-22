@@ -1,0 +1,10 @@
+<carrinho>
+  <produto codigo="1">
+    <descricao>panela</descricao>
+    <valor>59.99</valor>
+  </produto>
+  <produto codigo="2">
+    <descricao>coifa</descricao>
+    <valor>699.00</valor>
+  </produto>
+</carrinho>
