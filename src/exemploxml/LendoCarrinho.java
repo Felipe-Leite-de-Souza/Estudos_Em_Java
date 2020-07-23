@@ -9,6 +9,7 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 public class LendoCarrinho {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws FileNotFoundException {
 		XStream xstream = new XStream(new DomDriver());
 		xstream.alias("produto",  Produto.class);
