@@ -1,7 +1,7 @@
 package gravacaoleituradearquivo;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
+//import java.io.BufferedWriter;
+//import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 
@@ -12,6 +12,15 @@ public class GravandoEmails {
 		
 		//Uma das formas de fazer
 		//Buffer para gravação
+		
+		/*
+		 * ========================================================================
+		 *  As importalções foram comentadas apenas para tirar o status de "alert" 
+		 *  sem ter de usar os meios de Supressão do Java
+		 *  ========================================================================
+		 */
+		
+		
 		/*try (BufferedWriter writer = new BufferedWriter(new FileWriter("emails.txt", true))) {
 		
 			writer.write(email);
