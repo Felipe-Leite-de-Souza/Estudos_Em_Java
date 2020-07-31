@@ -1,4 +1,4 @@
-package gravacaodearquivo;
+package gravacaoleituradearquivo;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -11,6 +11,7 @@ public class GravandoEmails {
 		String[] emails = {"java2@java.com", "python2@python.com", "ruby2@ruby.com"};
 		
 		//Uma das formas de fazer
+		//Buffer para gravação
 		/*try (BufferedWriter writer = new BufferedWriter(new FileWriter("emails.txt", true))) {
 		
 			writer.write(email);
