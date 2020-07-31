@@ -1,0 +1,3 @@
+java2@java.com
+python2@python.com
+ruby2@ruby.com
