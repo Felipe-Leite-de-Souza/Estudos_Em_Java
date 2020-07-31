@@ -1,0 +1,4 @@
+Lápis;2;2,0;
+Caneta;5;6,25;
+Borracha;2;3,10;
+Caderno de capa dura;2;15,50;
