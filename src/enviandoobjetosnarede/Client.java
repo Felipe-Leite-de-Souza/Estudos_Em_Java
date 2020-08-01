@@ -10,6 +10,11 @@ import java.net.Socket;
 
 public class Client {
 	
+	
+	/*
+	 * O Client foi executado em uma VM (Virtual Machine) 
+	 * para simular outro computador.
+	 */
 	public static void main(String[] args) throws Exception {
 		Socket socket = new Socket("192.168.0.119", 3333);
 		
