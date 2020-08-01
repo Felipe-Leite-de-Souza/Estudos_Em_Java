@@ -19,9 +19,9 @@ public class FaturaBuscarBanco {
 		
 		//Com Diamond
 		List<Fatura> faturas = new ArrayList<>();
-		faturas.add(new Fatura("devedor01@hotmail.com", 384.95));
-		faturas.add(new Fatura("devedor02@gmail.com", 149.90));
-		faturas.add(new Fatura("devedor03@outlook.com", 59.96));
+		faturas.add(new Fatura("devedor01@hotmail.com", 384.90));
+		faturas.add(new Fatura("devedor02@gmail.com", 149.50));
+		faturas.add(new Fatura("devedor03@outlook.com", 59.10));
 		
 		return faturas;
 	}

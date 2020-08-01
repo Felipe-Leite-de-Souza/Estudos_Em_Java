@@ -37,4 +37,9 @@ public class Fatura {
 	public void setEmailEnviado(boolean emailEnviado) {
 		this.emailEnviado = emailEnviado;
 	}
+
+	public void atualizarStatus() {
+		System.out.printf("Atualizando status da fatura de valor R$ " + this.valor + "\n");
+	}
+	
 }
